@@ -1,0 +1,337 @@
+/* ---------- ROOT THEME VARIABLES ---------- */
+:root {
+  --bg: #0d1117;
+  --bg-soft: #161b22;
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+  --accent: #238636;
+  --accent-soft: rgba(35, 134, 54, 0.15);
+  --border: #30363d;
+}
+
+/* Light mode overrides */
+body.light {
+  --bg: #f3f4f6;
+  --bg-soft: #ffffff;
+  --text: #111827;
+  --text-muted: #4b5563;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+  --border: #d1d5db;
+}
+
+/* ---------- GLOBAL ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ---------- BUTTONS ---------- */
+.primary-btn,
+.secondary-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: white;
+}
+
+.primary-btn:hover {
+  opacity: 0.95;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.secondary-btn:hover {
+  color: var(--text);
+}
+
+.small-btn {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  padding: 2rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  margin-bottom: 0.7rem;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 1.2rem;
+}
+
+/* ---------- SCANNER ---------- */
+.scan-form {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.scan-form input[type="url"] {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.9rem;
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.scan-status,
+.scan-results {
+  margin-top: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  font-size: 0.9rem;
+}
+
+.scan-results h3 {
+  margin-top: 0;
+}
+
+.scan-results ul {
+  padding-left: 1.2rem;
+}
+
+.scan-results li span {
+  font-weight: 600;
+  color: #f97316;
+}
+
+.nmap-tips {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px dashed var(--border);
+  background: var(--bg-soft);
+  font-size: 0.85rem;
+}
+
+.nmap-tips pre {
+  background: var(--bg);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+/* ---------- CHATBOT ---------- */
+.chat-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.chat-window {
+  margin-top: 0.8rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  padding: 0.7rem;
+  height: 320px;
+  overflow-y: auto;
+}
+
+.message-row {
+  margin-bottom: 0.6rem;
+  display: flex;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.message-row.bot {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  max-width: 80%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  background: var(--accent-soft);
+}
+
+.message-row.user .message-bubble {
+  background: var(--accent);
+  color: white;
+}
+
+.typing-indicator {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.chat-form {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.chat-form input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.8rem;
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+/* ---------- QUIZ ---------- */
+.quiz-card {
+  margin-top: 0.8rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  padding: 0.9rem;
+}
+
+.quiz-question {
+  font-weight: 600;
+}
+
+.quiz-options {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.quiz-option-btn {
+  text-align: left;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.7rem;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.quiz-option-btn:hover {
+  border-color: var(--accent);
+}
+
+.quiz-feedback {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.quiz-footer {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: space-between;
+}
+
+#quiz-score {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 1rem 1.5rem 1.4rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- UTIL ---------- */
+.hidden {
+  display: none !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px) {
+  .scan-form {
+    flex-direction: column;
+  }
+
+  .chat-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quiz-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

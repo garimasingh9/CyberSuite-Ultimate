@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>CyberSuite – Ultimate Cybersecurity Toolkit</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- jsPDF for Download Chat as PDF -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      integrity="sha512-v2kDEe57fIFTdcQ4Jr2QbUOXH4Wh7hO8uFQBwYUNe3QZ8p9Gep5sZ2P2kC0pGqKqQvF0p0P2P7r5RPB6j0Q0JQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">CyberSuite</div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#tools">Scanner</a>
+        <a href="#chatbot">Chatbot</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+      <button id="theme-toggle" class="secondary-btn small-btn">
+        🌙 Dark
+      </button>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <h1>CyberSuite – Learn Cybersecurity the Smart Way</h1>
+      <p>
+        Simulated vulnerability scanner, AI-style chatbot with full cyber
+        knowledge, voice responses, and a quiz to test your skills.
+      </p>
+      <button id="get-started-btn" class="primary-btn">
+        Get Started
+      </button>
+    </section>
+
+    <!-- SCANNER SECTION (SIMULATED) -->
+    <section id="tools" class="section">
+      <h2>Mock Vulnerability & Port Scanner (Educational Only)</h2>
+      <p class="section-subtitle">
+        This scanner is a demo for learning. It does
+        <strong>not</strong> perform real Nmap / network attacks.
+      </p>
+
+      <form id="scan-form" class="scan-form">
+        <input
+          type="url"
+          id="scan-url"
+          placeholder="https://example.com"
+          required
+        />
+        <button type="submit" class="primary-btn">Run Simulated Scan</button>
+      </form>
+
+      <div id="scan-status" class="scan-status hidden"></div>
+      <div id="scan-results" class="scan-results hidden"></div>
+
+      <div class="nmap-tips">
+        <h3>How to do Real Scans (Legally) with Nmap</h3>
+        <p>
+          Run these commands on your own lab machines or with written
+          permission only:
+        </p>
+        <pre>
+nmap -sV target-ip          # Service/version detection
+nmap -A target-ip           # Aggressive scan (OS, version, scripts)
+nmap -p- target-ip          # Scan all 65535 ports
+nmap --script vuln target   # Run vuln scripts (authorized targets only)
+        </pre>
+      </div>
+    </section>
+
+    <!-- CHATBOT SECTION -->
+    <section id="chatbot" class="section">
+      <h2>CyberSecurity Chatbot</h2>
+      <p>
+        Ask anything about web security, network attacks, tools, malware,
+        OSINT, DFIR, cloud, Linux, and more.
+      </p>
+
+      <div class="chat-controls">
+        <label for="mode-select">Mode:</label>
+        <select id="mode-select">
+          <option value="basic">Basic</option>
+          <option value="advanced">Advanced</option>
+          <option value="pro">Pro</option>
+        </select>
+
+        <button id="voice-toggle" class="secondary-btn small-btn">
+          🔇 Voice Off
+        </button>
+
+        <button id="download-pdf-btn" class="secondary-btn small-btn">
+          ⬇ Chat PDF
+        </button>
+
+        <button id="clear-chat-btn" class="secondary-btn small-btn">
+          🗑 Clear
+        </button>
+      </div>
+
+      <div id="chat-window" class="chat-window">
+        <div id="chat-messages"></div>
+        <div id="typing-indicator" class="typing-indicator hidden">
+          CyberSuite is typing…
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <input
+          id="chat-input"
+          placeholder="Ask something (e.g., what is kali linux, nmap, xss)..."
+          autocomplete="off"
+          required
+        />
+        <button class="primary-btn">Send</button>
+      </form>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section id="quiz" class="section">
+      <h2>Cyber Quiz Module</h2>
+      <p class="section-subtitle">
+        Test your cyber knowledge with simple MCQ questions.
+      </p>
+
+      <div class="quiz-card">
+        <div id="quiz-question" class="quiz-question"></div>
+        <div id="quiz-options" class="quiz-options"></div>
+        <div id="quiz-feedback" class="quiz-feedback"></div>
+        <div class="quiz-footer">
+          <span id="quiz-score"></span>
+          <button id="next-question-btn" class="secondary-btn small-btn">
+            Next Question
+          </button>
+          <button id="restart-quiz-btn" class="secondary-btn small-btn">
+            Restart
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>
+        Built by Garima Singh – CyberSuite Project (Front-end, Cybersecurity,
+        Chatbot, Quiz)
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
